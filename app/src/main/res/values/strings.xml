@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="hombre">HOMBRE</string>
+    <string name="mujer">MUJER</string>
+    <string name="a_adir">AÑADIR</string>
+    <string name="nombre">Nombre:</string>
+    <string name="marca">Marca:</string>
+    <string name="g_nero">Género:</string>
+    <string name="categor_a">Categoría:</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="selecciona_una_imagen">Selecciona una imagen...</string>
+</resources>
