@@ -1,9 +1,8 @@
 package com.example.myapp.controladores;
 
 import com.example.myapp.clases.FotoProducto;
-import com.example.myapp.clases.Producto;
 import com.example.myapp.tareas.TareaActualizarFotoProducto;
-import com.example.myapp.tareas.TareaActualizarProducto;
+import com.example.myapp.tareas.TareaBorrarFotoProducto;
 import com.example.myapp.tareas.TareaInsertarFotoProducto;
 import com.example.myapp.tareas.TareaObtenerFotosProductos;
 
@@ -87,6 +86,32 @@ public class FotoProductoController {
         }
         finally {
             return actualizadoOK;
+        }
+    }
+
+    public static boolean borrarFotoProducto(int idProducto) {
+        FutureTask t = new FutureTask(new TareaBorrarFotoProducto(idProducto));
+        ExecutorService es = Executors.newSingleThreadExecutor();
+        es.submit(t);
+        boolean borradoOK = false;
+        try {
+            borradoOK = (boolean) t.get();
+            es.shutdown();
+            try {
+                if (!es.awaitTermination(800, TimeUnit.MILLISECONDS)) {
+                    es.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                es.shutdownNow();
+            }
+        } catch (
+                ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            return borradoOK;
         }
     }
 }

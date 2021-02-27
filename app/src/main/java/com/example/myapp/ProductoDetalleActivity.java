@@ -28,6 +28,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
     public static final String EXTRA_CATEGORIA = "com.example.ProductoDetalleActivity.categoria" ;
     public static final String EXTRA_GENERO = "com.example.ProductoDetalleActivity.genero" ;
     public static final String EXTRA_IMAGEN = "com.example.ProductoDetalleActivity.imagen" ;
+    public static final String EXTRA_IDPRODUCTO = "com.example.ProductoDetalleActivity.idproducto";
     TextView txt_detalle_marca = null;
     TextView txt_detalle_nombre = null;
     ImageView img_detalle_producto = null;
@@ -71,6 +72,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         String marca = String.valueOf(txt_detalle_marca.getText());
         String nombre = String.valueOf(txt_detalle_nombre.getText());
         String genero = p.getGenero();
+        int idproducto = p.getIdproducto();
         ArrayList<Categoria> categorias = CategoriaController.obtenerCategorias();
         String categoria = "";
         for(Categoria c: categorias){
@@ -83,6 +85,7 @@ public class ProductoDetalleActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_GENERO, genero);
         intent.putExtra(EXTRA_CATEGORIA, categoria);
         intent.putExtra(EXTRA_IMAGEN, imagen);
+        intent.putExtra(EXTRA_IDPRODUCTO, idproducto);
         startActivity(intent);
     }
 }

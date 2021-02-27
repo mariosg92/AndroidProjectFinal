@@ -100,6 +100,30 @@ public class ProductoDB {
                 return false;
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean borrarFotoProducto(int idProducto){
+        Connection conexion = BaseDB.conectarConBaseDeDatos();
+        if (conexion == null) {
+            return false;
+        }
+        try {
+            String ordensql = "DELETE FROM images WHERE idProducto = ?;";
+            PreparedStatement pst = conexion.prepareStatement(ordensql);
+            pst.setInt(1, idProducto);
+            int filasAfectadas = pst.executeUpdate();
+            pst.close();
+            conexion.close();
+            if (filasAfectadas > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }

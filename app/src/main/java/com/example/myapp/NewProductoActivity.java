@@ -48,6 +48,7 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
     String gseleccionado = null;
     ImageView imagen = null;
     Bitmap bitmap = null;
+    int idProducto = 0;
     boolean modify = false;
 
     @Override
@@ -82,6 +83,7 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
             String genero = intent.getStringExtra(ProductoDetalleActivity.EXTRA_GENERO);
             String categoria = intent.getStringExtra(ProductoDetalleActivity.EXTRA_CATEGORIA);
             byte[] img = intent.getByteArrayExtra(ProductoDetalleActivity.EXTRA_IMAGEN);
+            idProducto = intent.getIntExtra(ProductoDetalleActivity.EXTRA_IDPRODUCTO,0);
             sp_categoria.setSelection(getIndex(sp_categoria, categoria));
             sp_genero.setSelection(getIndex(sp_genero, genero));
             imagen.setImageBitmap(ImagenesBlobBitmap.bytes_to_bitmap(img));
@@ -140,6 +142,7 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
             FotoProductoController.insertarFoto(fp,p.getNombre());
         }
         if(modify){
+            p.setIdproducto(idProducto);
             fp.setFoto(bitmap);
             ProductoController.actualizarProducto(p);
             FotoProductoController.actualizarFoto(fp,p.getIdproducto());
@@ -170,12 +173,17 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
 
     public void confirmacion(View view) {
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setTitle("Desea añadir este Producto?");
+        if(modify){
+            alerta.setTitle("Desea modificar este Producto?");
+        }else{
+            alerta.setTitle("Desea añadir este Producto?");
+        }
         alerta.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 insertarProducto(view);
+                principal();
             }
         });
         alerta.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -184,5 +192,10 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
             }
         });
         alerta.show();
+    }
+
+    public void principal(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

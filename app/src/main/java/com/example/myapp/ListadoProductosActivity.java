@@ -84,6 +84,7 @@ public class ListadoProductosActivity extends AppCompatActivity {
                 Producto p = productos.get(viewHolder.getAdapterPosition());
                 productos.remove(viewHolder.getAdapterPosition());
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                FotoProductoController.borrarFotoProducto(p.getIdproducto());
                 ProductoController.borrarProducto(p);
             }
         });
