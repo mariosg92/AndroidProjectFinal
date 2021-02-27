@@ -77,7 +77,6 @@ public class NewProductoActivity extends AppCompatActivity implements AdapterVie
         }
         Intent intent = getIntent();
         if(intent.getStringExtra(ProductoDetalleActivity.EXTRA_NOMBRE) != null){
-            System.out.println("entra");
             edt_nombre_producto.setText(intent.getStringExtra(ProductoDetalleActivity.EXTRA_NOMBRE));
             edt_marca.setText(intent.getStringExtra(ProductoDetalleActivity.EXTRA_MARCA));
             String genero = intent.getStringExtra(ProductoDetalleActivity.EXTRA_GENERO);

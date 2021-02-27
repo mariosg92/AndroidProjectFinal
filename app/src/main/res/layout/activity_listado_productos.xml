@@ -15,20 +15,58 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@+id/rv_productos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252"
+        app:layout_constraintVertical_bias="0.097"
         app:srcCompat="@drawable/productos" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_productos"
         android:layout_width="338dp"
         android:layout_height="484dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="108dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_buscar"
+        android:layout_width="257dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="4dp"
+        android:autofillHints=""
+        android:background="@drawable/edittextbackground"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/buscar"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="2sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_productos"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_buscar"
+        android:layout_width="55dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:onClick="buscarProductos"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_buscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/edt_buscar"
+        app:layout_constraintTop_toTopOf="@+id/edt_buscar"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

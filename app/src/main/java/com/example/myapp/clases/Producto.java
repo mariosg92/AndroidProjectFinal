@@ -52,6 +52,9 @@ public class Producto implements Serializable {
                 ", idcategoria=" + idcategoria +
                 '}';
     }
+    public String returnStringBusqueda(){
+        return nombre + " " + marca;
+    }
 
     @Override
     public int hashCode() {

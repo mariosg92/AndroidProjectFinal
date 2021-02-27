@@ -27,38 +27,8 @@ public class BaseDB {
             return null;
         }
     }
-    //-----------------------------------------------------------
-    public static ResultSet obtenerDatosTabla(Connection conexion, String nombreTabla)
-    {
-        try {
-            String ordensql = "select * from " + nombreTabla;
-            Statement sentencia = conexion.createStatement();
-            ResultSet resultado = sentencia.executeQuery(ordensql);
-            return resultado;
-        } catch (SQLException e) {
-            return null;
-        }
-    }
-    //-----------------------------------------------------------
-    public static boolean borrarDatosTabla(Connection conexion, String tabla, String columna, String valorcolumna) {
-        try {
-            String ordensql= "delete from " + tabla +" where "+ columna + " like ? ";
-            PreparedStatement sentencia = conexion.prepareStatement(ordensql);
-            sentencia.setString(1, valorcolumna);
-            int filasafectadas = sentencia.executeUpdate();
-            sentencia.close();
-            conexion.close();
-            if(filasafectadas >0 )
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
-        } catch (SQLException e) {
-            return false;
-        }
-    }
+
+
     //-----------------------------------------------------------------------------------
     public static ResultSet buscarFilasEnTabla(Connection conexion, String nombreTabla, String columna, String valorcolumna)
     {

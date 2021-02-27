@@ -18,14 +18,14 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252"
+        app:layout_constraintVertical_bias="0.075"
         app:srcCompat="@drawable/categoria" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_categorias"
         android:layout_width="338dp"
         android:layout_height="484dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
