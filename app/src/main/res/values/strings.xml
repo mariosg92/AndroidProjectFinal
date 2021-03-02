@@ -5,13 +5,18 @@
     <string name="hombre">HOMBRE</string>
     <string name="mujer">MUJER</string>
     <string name="a_adir">AÑADIR</string>
-    <string name="nombre">Nombre:</string>
-    <string name="marca">Marca:</string>
-    <string name="g_nero">Género:</string>
-    <string name="categor_a">Categoría:</string>
+    <string name="nombre">Nombre: </string>
+    <string name="marca">Marca: </string>
+    <string name="g_nero">Género: </string>
+    <string name="categor_a">Categoría: </string>
     <string name="cancelar">CANCELAR</string>
     <string name="selecciona_una_imagen">Selecciona imagen...</string>
     <string name="name">Name</string>
-    <string name="buscar">Buscar...</string>
+    <string name="buscar"><i>Buscar...</i></string>
     <string name="modificar">Modificar</string>
+    <string name="msg_clothing">MSG CLOTHING</string>
+    <string name="productos">PRODUCTOS</string>
+    <string name="categor_as">CATEGORÍAS</string>
+    <string name="nombre_del_producto">Nombre del producto</string>
+    <string name="marca_del_producto">Marca del producto</string>
 </resources>

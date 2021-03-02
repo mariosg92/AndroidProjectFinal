@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class ListadoProductosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_productos);
-        mostrarToast("SWIPE RIGHT TO DELETE AN ITEM");
+        mostrarToast("DESPLAZA A LA DERECHA PARA BORRAR");
         edt_busqueda = findViewById(R.id.edt_buscar);
         Intent intent = getIntent();
         genero = intent.getStringExtra(EXTRA_GENERO);
@@ -81,7 +82,7 @@ public class ListadoProductosActivity extends AppCompatActivity {
     }
 
     private void mostrarToast(String texto) {
-        Toast.makeText(this, texto, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
     }
 
     private void mostrarAlerta(RecyclerView.ViewHolder viewHolder, String genero, String categoria) {

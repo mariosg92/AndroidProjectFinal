@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -41,8 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/textview"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold|italic" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txt_nombrep"
@@ -50,8 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/textview"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold|italic" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -62,10 +60,9 @@
         android:layout_width="150dp"
         android:layout_height="44dp"
         android:backgroundTint="@color/white"
-        android:text="@string/modificar"
         android:onClick="modificarActivity"
+        android:text="@string/modificar"
         android:textColor="@color/black"
-        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@android:color/white"
     android:padding="5dp"
     tools:context=".MainActivity">
 
@@ -24,26 +24,28 @@
 
         <Button
             android:id="@+id/bt_hombre"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/hombre"
+            android:backgroundTint="@color/white"
+            android:elevation="5dp"
             android:onClick="sectionHombres"
-            android:textColor="#050505"
-            android:textStyle="bold|italic" />
+            android:padding="2dp"
+            android:text="@string/hombre"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/bt_mujer"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:backgroundTint="@color/white"
             android:foregroundTint="#000000"
-            android:text="@string/mujer"
             android:onClick="sectionMujeres"
-            android:textColor="#000000"
-            android:textStyle="bold|italic" />
+            android:text="@string/mujer"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -64,18 +66,21 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.862" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="264dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/msg_clothing"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077"
-        app:srcCompat="@drawable/title"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

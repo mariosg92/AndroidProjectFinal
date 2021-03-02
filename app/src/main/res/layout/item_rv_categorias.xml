@@ -21,9 +21,8 @@
             android:layout_height="68dp"
             android:gravity="center"
             android:text="@string/textview"
-            android:textSize="30sp"
             android:textColor="@color/black"
-            android:textStyle="bold|italic" />
+            android:textSize="30sp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
